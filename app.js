@@ -78,7 +78,8 @@ function antiPorn(data) {
 var unblockerConfig = {
     prefix: '/cdnID/',
     requestMiddleware: [
-        discord
+        discord,
+        antiPorn
     ],
     responseMiddleware: [
         googleAnalyticsMiddleware,
