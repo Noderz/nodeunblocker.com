@@ -52,6 +52,12 @@ function googleAnalyticsMiddleware(data) {
     }
 }
 
+function discord(data) {
+    if (data.url.match(/^https?:\/\/discordapp.com\//) {
+        data.headers['Origin'] = "https://discordapp.com" 
+    }
+}
+
 function iframe(data) {
     data.headers['X-Frame-Options'] = "KOMEGA" 
     data.headers['Access-Control-Allow-Origin'] = "*" 
