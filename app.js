@@ -70,7 +70,7 @@ function requireHTTPS(data) {
 }
 
 function antiPorn(data) {
-    if (data.url.match(/^https?:\/\/pornhub.com\//)) {
+    if (data.url.match(/^https?:\/\/www.pornhub.com\//)) {
         return "no porn for you"
     }
 }
