@@ -71,6 +71,9 @@ function requireHTTPS(data) {
 
 var unblockerConfig = {
     prefix: '/cdnID/',
+    requestMiddleware: [
+        discord
+    ],
     responseMiddleware: [
         googleAnalyticsMiddleware,
         iframe,
