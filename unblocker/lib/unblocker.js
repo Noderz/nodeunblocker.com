@@ -164,7 +164,11 @@ function Unblocker(config) {
                 return response.redirectTo("");
             }
             // handles cases like like /proxy/google.com and redirects to /proxy/http://google.com/
-            return response.redirectTo("https://" + request.url.substr(config.prefix.length));
+            if (request.url.match(/^wss:\/\//)) {
+                return response.redirectTo(request.url)
+            } else {
+                return response.redirectTo("https://" + request.url.substr(config.prefix.length));
+            }
         }
 
         // if there is no referer, then either they just got here or we can't help them
