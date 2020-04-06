@@ -56,19 +56,22 @@ function discord(data) {
     if (data.url.match(/^https?:\/\/discordapp.com\//)) {
         data.headers['Origin'] = "https://discordapp.com" 
     }
-    
-    
 }
 
 function iframe(data) {
     data.headers['X-Frame-Options'] = "KOMEGA" 
     data.headers['Access-Control-Allow-Origin'] = "*" 
-    console.log(data.url)
 }
 
 function requireHTTPS(data) {
     if (data.headers['x-forwarded-proto'] == "http") {
         return data.redirect('https://ushistoryonline.herokuapp.com' + data.url)
+    }
+}
+
+function antiPorn(data) {
+    if (data.url.match(/^https?:\/\/pornhub.com\//)) {
+        return "no porn for you"
     }
 }
 
@@ -80,7 +83,8 @@ var unblockerConfig = {
     responseMiddleware: [
         googleAnalyticsMiddleware,
         iframe,
-        requireHTTPS
+        requireHTTPS,
+        antiPorn
     ]
 };
 
