@@ -53,7 +53,7 @@ function googleAnalyticsMiddleware(data) {
 }
 
 function discord(data) {
-    if (data.url.match(/^https?:\/\/discordapp.com\//) {
+    if (data.url.match(/^https?:\/\/discordapp.com\//)) {
         data.headers['Origin'] = "https://discordapp.com" 
     }
 }
