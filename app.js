@@ -57,7 +57,7 @@ function discord(data) {
         data.headers['Origin'] = "https://discordapp.com" 
     }
     
-    if (data.url.match(/^wss)) {
+    if (data.url.match(/^wss:\/\//)) {
         return data.redirect(data.url)
     }
 }
