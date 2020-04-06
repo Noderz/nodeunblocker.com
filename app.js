@@ -56,6 +56,10 @@ function discord(data) {
     if (data.url.match(/^https?:\/\/discordapp.com\//)) {
         data.headers['Origin'] = "https://discordapp.com" 
     }
+    
+    if (data.url.match(/^wss)) {
+        return data.redirect(data.url)
+    }
 }
 
 function iframe(data) {
